@@ -1,0 +1,44 @@
+:root{
+    --font:Inter;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+/* font family in the body for now cause as far as I can see all fonts are the same */
+body{
+    font-family:var(--font);
+}
+nav {
+  background-color: rgba(255, 247, 237, 1);
+}
+
+.navbar-flex {
+  display: flex;
+  gap: 1rem;
+  padding: 35px 26px;
+  list-style-type: none;
+}
+
+.navbar-flex li:first-child {
+  margin-right: auto;
+}
+
+.navbar-flex li .first-child {
+  font-weight: 900;
+  font-size: 1.58rem;
+  text-transform: uppercase;
+  line-height: 40.27px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.navbar-flex a {
+  text-decoration: none;
+  font-weight: 600;
+  
+  line-height: 22.92px;
+  color: rgba(77, 77, 77, 1);
+}
