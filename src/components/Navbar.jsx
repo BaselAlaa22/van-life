@@ -2,7 +2,8 @@ import {Link} from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <nav>
+    <header>
+      <nav>
       <ul className='navbar-flex'>
         <li>
           <Link className='first-child' to='/'>#VanLife</Link>
@@ -15,5 +16,6 @@ export default function Navbar() {
         </li>
       </ul>
     </nav>
+    </header>
   );
 }
