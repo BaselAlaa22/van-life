@@ -44,6 +44,7 @@ nav {
   color: #4d4d4d;
 }
 
+/* //////////////////////////HOME PAGE////////////////////// */
 .home {
   background-image: url("home.png");
   background-size: cover;
@@ -68,8 +69,10 @@ nav {
   margin: 23px 0 52px 0;
 }
 
-.home-btn {
+.home a {
   color: #ffffff;
+  max-width: fit-content;
+  margin: 0 auto;
   font-weight: 700;
   font-size: 0.99rem;
   line-height: 32px;
@@ -79,6 +82,7 @@ nav {
   padding: 10px 143px;
 }
 
+/* //////////////////////////ABOUT PAGE////////////////////// */
 .about-body {
   padding: 49px 27px;
 }
@@ -87,38 +91,50 @@ nav {
   object-fit: cover;
   width: 548px;
   height: 233px;
+  margin: 0 auto;
+  display: block;
 }
 
 .about-title {
   font-size: 2rem;
   line-height: 32px;
-  color:#161616;
+  color: #161616;
 }
-.about-description{
-  font-weight:500;
+.about-description {
+  font-weight: 500;
   margin: 31px 0 55px 0;
 }
 
-.about-explore{
-  background-color:#FFCC8D;
-  padding:32px 37px;
-  border-radius:5px;
+.about-explore {
+  background-color: #ffcc8d;
+  padding: 32px 37px;
+  border-radius: 5px;
 }
-.about-explore-title{
-  color:#161616;
+.about-explore-title {
+  color: #161616;
 }
-.about-explore-btn{
-  margin-top:25px;
-  background-color:#161616;
-  color:#ffffff;
+.about-explore a {
+  margin-top: 25px;
+  background-color: #161616;
+  color: #ffffff;
   font-weight: 700;
-  font-size:0.99rem;
-  line-height:24px;
-  padding:12px 22px;
-  border-radius:10px;
-  border:none;
+  font-size: 0.99rem;
+  line-height: 24px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+}
+.link-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.1s ease-in;
+  cursor: pointer;
 }
 
+.link-btn:hover {
+  transform: translate(0, 3px);
+}
 footer {
   background-color: rgba(37, 37, 37, 1);
   padding: 25px 106px;
