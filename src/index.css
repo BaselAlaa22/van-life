@@ -1,16 +1,15 @@
-:root{
-    --font:Inter;
+:root {
+  --font: Inter;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 /* font family in the body for now cause as far as I can see all fonts are the same */
-body{
-    font-family:var(--font);
+body {
+  font-family: var(--font);
 }
 nav {
   background-color: rgba(255, 247, 237, 1);
@@ -18,7 +17,7 @@ nav {
 
 .navbar-flex {
   display: flex;
-  align-items:center;
+  align-items: center;
   gap: 1rem;
   padding: 35px 26px;
   list-style-type: none;
@@ -42,47 +41,88 @@ nav {
   text-decoration: none;
   font-weight: 600;
   line-height: 22.92px;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
-.home{
+.home {
   background-image: url("home.png");
-  background-size:cover;
+  background-size: cover;
   background-color: #00000075;
-  background-blend-mode:darken;
+  background-blend-mode: darken;
   min-height: 100dvh;
-  padding:64px 27px;
+  padding: 64px 27px;
   display: flex;
-  flex-direction:column;
-  justify-content:center;
+  flex-direction: column;
+  justify-content: center;
 }
-.home-title{
+.home-title {
   font-weight: 800;
-  color:#FFFFFF;
+  color: #ffffff;
   font-size: 2.25rem;
   line-height: 42px;
 }
-.home-subtitle{
+.home-subtitle {
   font-weight: 500;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 24px;
   margin: 23px 0 52px 0;
 }
 
-.home-btn{
-  color:#FFFFFF;
+.home-btn {
+  color: #ffffff;
   font-weight: 700;
   font-size: 0.99rem;
   line-height: 32px;
-  border:none;
-  border-radius:5px;
-  background-color: #FF8C38;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff8c38;
   padding: 10px 143px;
 }
-footer{
+
+.about-body {
+  padding: 49px 27px;
+}
+
+.about-header > img {
+  object-fit: cover;
+  width: 548px;
+  height: 233px;
+}
+
+.about-title {
+  font-size: 2rem;
+  line-height: 32px;
+  color:#161616;
+}
+.about-description{
+  font-weight:500;
+  margin: 31px 0 55px 0;
+}
+
+.about-explore{
+  background-color:#FFCC8D;
+  padding:32px 37px;
+  border-radius:5px;
+}
+.about-explore-title{
+  color:#161616;
+}
+.about-explore-btn{
+  margin-top:25px;
+  background-color:#161616;
+  color:#ffffff;
+  font-weight: 700;
+  font-size:0.99rem;
+  line-height:24px;
+  padding:12px 22px;
+  border-radius:10px;
+  border:none;
+}
+
+footer {
   background-color: rgba(37, 37, 37, 1);
   padding: 25px 106px;
-  color:#AAAAAA;
+  color: #aaaaaa;
   font-weight: 500;
   text-align: center;
 }
