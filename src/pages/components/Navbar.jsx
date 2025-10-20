@@ -12,7 +12,7 @@ export default function Navbar() {
           <Link to='/about'>About</Link>
         </li>
         <li>
-          <Link to='/'>Van</Link>
+          <Link to='/vans'>Van</Link>
         </li>
       </ul>
     </nav>

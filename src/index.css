@@ -1,5 +1,9 @@
 :root {
   --font: Inter;
+  --body-backgroud: #fff7ed;
+  --filter-btn-backgroud: #ffead0;
+  --filter-btn-color: #4d4d4d;
+  --van-item-font-color: #161616;
 }
 
 * {
@@ -10,9 +14,12 @@
 /* font family in the body for now cause as far as I can see all fonts are the same */
 body {
   font-family: var(--font);
+  background-color: var(--body-backgroud);
+  overflow-x: auto;
 }
-nav {
-  background-color: rgba(255, 247, 237, 1);
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar-flex {
@@ -87,7 +94,7 @@ nav {
   padding: 49px 27px;
 }
 
-.about-header > img {
+.about > img {
   object-fit: cover;
   width: 548px;
   height: 233px;
@@ -124,17 +131,161 @@ nav {
   border-radius: 10px;
   border: none;
 }
+
+/* //////////////// Vans page //////////////// */
+
+.vans {
+  padding: 55px 27px;
+}
+
+.vans-filters {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+  margin: 22px 0 55px 0;
+  flex-wrap:wrap;
+}
+
+.filter-btn,
+.clear-btn {
+  color: var(--filter-btn-color);
+  padding: 7px 26px;
+  font-size: 1rem;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.filter-btn {
+  background-color: var(--filter-btn-backgroud);
+  border: none;
+  border-radius: 5px;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+.vans-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 33px;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+@media (min-width:768px){
+  .vans-body{
+    grid-template-columns: repeat(2,1fr);
+    gap:55px;
+    overflow:hidden;
+  }
+
+  .vans-filters {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+}
+@media (min-width:1024px){
+  .vans-body{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+/*/////////////// vans grid item ////////////*/
+.vans-grid-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 10px;
+}
+
+.van-img {
+  grid-column: span 2;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.van-name {
+  justify-self: start;
+  display: inline-block;
+  max-width: 100%;
+  white-space: wrap;
+}
+
+.van-name,
+.van-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--van-item-font-color);
+}
+.van-price {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.van-price span {
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-align: left;
+  line-height: 1;
+}
+
+.van-type {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 32px;
+  max-width: fit-content;
+  padding: 3px 14px;
+  border-radius: 5px;
+  color: #ffead0;
+  text-transform: capitalize;
+}
+.van-type.simple {
+  background-color: #e17654;
+}
+.van-type.rugged {
+  background-color: #115e59;
+}
+.van-type.luxury {
+  background-color: #161616;
+}
+
+@media (min-width: 768px) {
+  .vans-grid-item {
+    max-width: 400px;
+  }
+  .van-img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+
 .link-btn {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  transition: transform 0.1s ease-in;
   cursor: pointer;
 }
 
-.link-btn:hover {
-  transform: translate(0, 3px);
+.hover-effect {
+  transition: transform 0.1s ease-in-out;
 }
+
+.hover-effect:hover {
+  transform: scale(1.05);
+}
+
+.click-effect {
+  transition: transform 0.1s ease-in;
+}
+.click-effect:active {
+  transform: translate(0, 5px);
+}
+
 footer {
   background-color: rgba(37, 37, 37, 1);
   padding: 25px 106px;
