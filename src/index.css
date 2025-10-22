@@ -1,9 +1,22 @@
 :root {
+  /* general colors and fonts */
   --font: Inter;
-  --body-backgroud: #fff7ed;
-  --filter-btn-backgroud: #ffead0;
-  --filter-btn-color: #4d4d4d;
-  --van-item-font-color: #161616;
+  --body-background: #fff7ed;
+  --font-color-grey: #4d4d4d;
+  --color-white: #ffffff;
+  --color-black: #161616;
+  --color-flesh: #ffead0;
+  --about-explore-bg: #ffcc8d;
+
+  /* button background colors */
+  --btn-background-orange: #ff8c38;
+  --btn-background-simple: #e17654;
+  --btn-background-rugged: #115e59;
+  --btn-background-luxury: var(--color-black); /* reusing dark for luxury */
+
+  /* border radius */
+  --radius-sm: 5px;
+  --radius-md: 10px;
 }
 
 * {
@@ -14,7 +27,7 @@
 /* font family in the body for now cause as far as I can see all fonts are the same */
 body {
   font-family: var(--font);
-  background-color: var(--body-backgroud);
+  background-color: var(--body-background);
   overflow-x: auto;
 }
 
@@ -48,12 +61,16 @@ body::-webkit-scrollbar {
   text-decoration: none;
   font-weight: 600;
   line-height: 22.92px;
-  color: #4d4d4d;
+  color: var(--font-color-grey);
+}
+
+.navbar-flex a:hover {
+  text-decoration: underline;
 }
 
 /* //////////////////////////HOME PAGE////////////////////// */
 .home {
-  background-image: url("home.png");
+  background-image: url("./home.png");
   background-size: cover;
   background-color: #00000075;
   background-blend-mode: darken;
@@ -65,28 +82,34 @@ body::-webkit-scrollbar {
 }
 .home-title {
   font-weight: 800;
-  color: #ffffff;
+  color: var(--color-white);
   font-size: 2.25rem;
   line-height: 42px;
 }
 .home-subtitle {
   font-weight: 500;
-  color: #ffffff;
+  color: var(--color-white);
   line-height: 24px;
   margin: 23px 0 52px 0;
 }
 
-.home a {
-  color: #ffffff;
-  max-width: fit-content;
+.home-link-btn {
+  color: var(--color-white);
+  width: 100%;
   margin: 0 auto;
   font-weight: 700;
   font-size: 0.99rem;
   line-height: 32px;
   border: none;
-  border-radius: 5px;
-  background-color: #ff8c38;
-  padding: 10px 143px;
+  border-radius: var(--radius-sm);
+  background-color: var(--btn-background-orange);
+  padding: 10px 20px;
+}
+
+@media (min-width: 768px) {
+  .home-link-btn {
+    max-width: 400px;
+  }
 }
 
 /* //////////////////////////ABOUT PAGE////////////////////// */
@@ -105,7 +128,7 @@ body::-webkit-scrollbar {
 .about-title {
   font-size: 2rem;
   line-height: 32px;
-  color: #161616;
+  color: var(--color-black);
 }
 .about-description {
   font-weight: 500;
@@ -113,22 +136,22 @@ body::-webkit-scrollbar {
 }
 
 .about-explore {
-  background-color: #ffcc8d;
+  background-color: var(--about-explore-bg);
   padding: 32px 37px;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
 }
 .about-explore-title {
-  color: #161616;
+  color: var(--color-black);
 }
 .about-explore a {
   margin-top: 25px;
-  background-color: #161616;
-  color: #ffffff;
+  background-color: var(--color-black);
+  color: var(--color-white);
   font-weight: 700;
   font-size: 0.99rem;
   line-height: 24px;
   padding: 12px 22px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   border: none;
 }
 
@@ -143,12 +166,12 @@ body::-webkit-scrollbar {
   justify-content: space-evenly;
   gap: 5px;
   margin: 22px 0 55px 0;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 .filter-btn,
 .clear-btn {
-  color: var(--filter-btn-color);
+  color: var(--font-color-grey);
   padding: 7px 26px;
   font-size: 1rem;
   line-height: 24px;
@@ -156,9 +179,9 @@ body::-webkit-scrollbar {
 }
 
 .filter-btn {
-  background-color: var(--filter-btn-backgroud);
+  background-color: var(--color-flesh);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
 }
 
 .clear-btn {
@@ -173,11 +196,15 @@ body::-webkit-scrollbar {
   justify-items: center;
   margin-bottom: 20px;
 }
-@media (min-width:768px){
-  .vans-body{
-    grid-template-columns: repeat(2,1fr);
-    gap:55px;
-    overflow:hidden;
+
+.vans-body a {
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .vans-body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 55px;
+    overflow: hidden;
   }
 
   .vans-filters {
@@ -185,9 +212,9 @@ body::-webkit-scrollbar {
     gap: 20px;
   }
 }
-@media (min-width:1024px){
-  .vans-body{
-    grid-template-columns: repeat(3,1fr);
+@media (min-width: 1024px) {
+  .vans-body {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /*/////////////// vans grid item ////////////*/
@@ -203,7 +230,7 @@ body::-webkit-scrollbar {
   max-width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
 }
 
 .van-name {
@@ -217,7 +244,7 @@ body::-webkit-scrollbar {
 .van-price {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--van-item-font-color);
+  color: var(--color-black);
 }
 .van-price {
   justify-self: end;
@@ -227,7 +254,7 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 
-.van-price span {
+.price-unit {
   font-weight: 500;
   font-size: 0.875rem;
   text-align: left;
@@ -240,29 +267,59 @@ body::-webkit-scrollbar {
   line-height: 32px;
   max-width: fit-content;
   padding: 3px 14px;
-  border-radius: 5px;
-  color: #ffead0;
+  border-radius: var(--radius-sm);
+  color: var(--color-flesh);
   text-transform: capitalize;
 }
 .van-type.simple {
-  background-color: #e17654;
+  background-color: var(--btn-background-simple);
 }
 .van-type.rugged {
-  background-color: #115e59;
+  background-color: var(--btn-background-rugged);
 }
 .van-type.luxury {
-  background-color: #161616;
+  background-color: var(--btn-background-luxury);
 }
 
 @media (min-width: 768px) {
   .vans-grid-item {
     max-width: 400px;
   }
-  .van-img {
-    max-width: 400px;
-    max-height: 400px;
+}
+
+/* //////////////////////////VAN DETAIL PAGE////////////////////// */
+
+.van-detail {
+  padding: 55px 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.van-detail-img{
+  width:500px;
+  height:500px;
+  object-fit:cover;
+  border-radius: var(--radius-sm);
+  margin-bottom:40px; /* 50px in the design but already have 10px from the gap */
+}
+
+@media (min-width: 768px) {
+  .van-detail-img{
+    margin:auto;
   }
 }
+
+.van-description{
+  font-weight:500;
+  margin-bottom:11px;
+}
+
+
+
+
+
 
 .link-btn {
   display: inline-block;
@@ -293,3 +350,16 @@ footer {
   font-weight: 500;
   text-align: center;
 }
+
+
+
+.spinner {
+  width: 50px;
+  margin:40px auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid var(--color-flesh);
+  border-right-color: var(--btn-background-orange);
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {to{transform: rotate(1turn)}}
