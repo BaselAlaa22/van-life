@@ -188,6 +188,9 @@ body::-webkit-scrollbar {
   background: none;
   border: none;
   text-decoration: underline;
+  display: flex;
+  align-items: center;   
+  gap: 8px;   
 }
 .vans-body {
   display: grid;
@@ -297,29 +300,24 @@ body::-webkit-scrollbar {
   gap: 10px;
 }
 
-.van-detail-img{
-  width:500px;
-  height:500px;
-  object-fit:cover;
+.van-detail-img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
   border-radius: var(--radius-sm);
-  margin-bottom:40px; /* 50px in the design but already have 10px from the gap */
+  margin-bottom: 40px; /* 50px in the design but already have 10px from the gap */
 }
 
 @media (min-width: 768px) {
-  .van-detail-img{
-    margin:auto;
+  .van-detail-img {
+    margin: auto;
   }
 }
 
-.van-description{
-  font-weight:500;
-  margin-bottom:11px;
+.van-description {
+  font-weight: 500;
+  margin-bottom: 11px;
 }
-
-
-
-
-
 
 .link-btn {
   display: inline-block;
@@ -351,15 +349,17 @@ footer {
   text-align: center;
 }
 
-
-
 .spinner {
   width: 50px;
-  margin:40px auto;
+  margin: 40px auto;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 8px solid var(--color-flesh);
   border-right-color: var(--btn-background-orange);
   animation: l2 1s infinite linear;
 }
-@keyframes l2 {to{transform: rotate(1turn)}}
+@keyframes l2 {
+  to {
+    transform: rotate(1turn);
+  }
+}
